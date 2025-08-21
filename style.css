@@ -1,0 +1,85 @@
+body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #eeb9f4;
+    }
+    h2 {
+      color: #333;
+      text-align: center;
+    }
+    .container {
+      background: white;
+      color: black;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      max-width: 800px;
+      margin: auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+    th, td {
+      border: 1px solid #dacfcf;
+      padding: 8px;
+      text-align: center;
+    
+    }
+    th {
+      background-color: black;
+      color: white;
+    }
+    input {
+      padding: 6px;
+      margin: 5px 0;
+      width: 100%;
+    }
+    button {
+      padding: 10px 15px;
+      background: #4CAF50;
+      border: none;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 5px;
+    }
+    button:hover {
+      background: #45a049;
+    }      
+    .suggestions {
+      border: 0 solid #0b0909;
+      max-height: 120px;
+      overflow-y: auto;
+      position: absolute;
+      background: #dad9e3;
+      color: black;
+      width: 500px;
+      z-index: 1000;
+    }
+    .suggestions div {
+      padding: 8px;
+      cursor: pointer;
+    }
+    .suggestions div:hover {
+      background: #ddd;
+    }
+    .removeBtn {
+      background: red;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .removeBtn:hover {
+      background: darkred;
+
+    }
+
+
+
+
+
+
