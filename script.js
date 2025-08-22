@@ -1,4 +1,4 @@
-    const subjectList = {
+const subjectList = {
       "C": 3,
       "C++": 3,
       "Java": 4,
@@ -12,13 +12,10 @@
     const gradePoints = {
       "O": 10,
       "A": 9,
-
-      "B+":8,
+      "B+": 8,
       "B": 7,
       "B-": 6,
-      
       "C": 5,
-    
       "F": 0
     };
 
@@ -72,7 +69,7 @@
           <td>${s.credits}</td>
           <td></td>
           <td>${gradePoint}</td>
-<td>${s.credits} × ${gradePoint} = ${(s.credits * gradePoint).toFixed(2)}</td>
+          <td>${s.credits} × ${gradePoint} = ${(s.credits * gradePoint).toFixed(2)}</td>
           <td><button class="removeBtn" onclick="removeSubject(${index})">Remove</button></td>
         `;
 
@@ -96,44 +93,46 @@
       });
     }
 
-function calculateGPA() {
-   let totalCredits = 0, totalPoints = 0;
-      let hasFail = false;
-      subjects.forEach(s => {
-        if (s.grade === "F") hasFail = true;
-        totalCredits += s.credits;
-        totalPoints += s.credits * gradePoints[s.grade];
+    function calculateGPA() {
+      let totalCredits = 0, totalPoints = 0;
 
+      subjects.forEach(s => {
+        if (s.grade !== "F") {  // ✅ Fail subjects skip
+          totalCredits += s.credits;
+          totalPoints += s.credits * gradePoints[s.grade];
+        }
       });
-      const tbody = document.querySelector("#resultTable tbody");
+
       if (subjects.length === 0) {
         alert("No subjects added!");
         return;
-      } 
+      }
 
       // Remove old totals before adding new
       document.querySelectorAll("#resultTable tfoot tr.resultRow").forEach(el => el.remove());
       let resultRow = document.createElement("tr");
       resultRow.classList.add("resultRow");
-      if (hasFail) {
+
+      if (totalCredits === 0) {
         resultRow.innerHTML = `<td colspan="6"><b>Fail – GPA not available</b></td>`;
       } else {
         const gpa = (totalPoints / totalCredits).toFixed(2);
-       resultRow.innerHTML = `
-  <td colspan="6">
-    <b>
-      Total Points = ${totalPoints}, 
-      Total Credits = ${totalCredits}, 
-      GPA = ${totalPoints} ÷ ${totalCredits} = ${gpa}
-    </b>
-  </td>
-`;
-         
+        resultRow.innerHTML = `
+          <td colspan="6">
+            <b>
+              Total Points = ${totalPoints}, 
+              Total Credits = ${totalCredits}, 
+              GPA = ${totalPoints} ÷ ${totalCredits} = ${gpa}
+            </b>
+          </td>
+        `;
       }
+
       document.querySelector("#resultTable tfoot").appendChild(resultRow);
     }
+
     function saveData() {
       localStorage.setItem("subjects", JSON.stringify(subjects));
     }
+
     renderTable();
-  
