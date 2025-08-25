@@ -11,7 +11,21 @@
     <h2>GPA Calculator</h2>
 
     <label>Subject</label>
-    <input type="text" id="subjectInput" placeholder="Search subject..." onkeyup="showSuggestions()">
+    <label>Subject</label>
+<div class="input-suggestion-wrapper">
+  <input type="text" id="subjectInput" placeholder="Search subject..." onkeyup="showSuggestions()">
+  <div id="suggestions" class="suggestions"></div>
+</div>
+
+    <div class="custom-inputs">
+  <input type="text" id="customName" placeholder="Enter custom subject name">
+  <input type="number" id="customCredits" placeholder="Enter credits" min="1">
+  <button onclick="addCustomSubject()">Add Custom Subject</button>
+</div>
+
+
+    
+
     <div id="suggestions" class="suggestions"></div>    
 
     <table id="resultTable">
@@ -39,6 +53,8 @@
     <center>
                 <button onclick="addSubject()">Add Subject</button>
             <button onclick="calculateGPA()">Calculate GPA</button>
+                  <button onclick="resetAll()">Reset All</button>
+
     </center>
   </div>
   <script src="script.js"></script>

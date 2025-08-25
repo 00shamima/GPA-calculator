@@ -33,6 +33,7 @@ const subjectList = {
           div.innerText = sub;
           div.onclick = () => {
             document.getElementById("subjectInput").value = sub;
+
             suggestionBox.innerHTML = "";
           };
           suggestionBox.appendChild(div);
@@ -41,6 +42,7 @@ const subjectList = {
 
     function addSubject() {
       const subject = document.getElementById("subjectInput").value;
+
       if (!subject || !subjectList[subject]) {
         alert("Please choose a valid subject!");
         return;
@@ -49,13 +51,33 @@ const subjectList = {
       saveData();
       renderTable();
       document.getElementById("subjectInput").value = "";
+
+
     }
+    
 
     function removeSubject(index) {
       subjects.splice(index, 1);
       saveData();
       renderTable();
     }
+    function addCustomSubject() {
+  const subject = document.getElementById("customName").value.trim();
+  const credits = parseFloat(document.getElementById("customCredits").value);
+
+  if (!subject || isNaN(credits) || credits <= 0) {
+    alert("Please enter a valid subject name and credits.");
+    return;
+  }
+
+  subjects.push({ subject, credits, grade: "O" });
+  saveData();
+  renderTable();
+
+  document.getElementById("customName").value = "";
+  document.getElementById("customCredits").value = "";
+}
+
 
     function renderTable() {
       const tbody = document.querySelector("#resultTable tbody");
@@ -73,7 +95,6 @@ const subjectList = {
           <td><button class="removeBtn" onclick="removeSubject(${index})">Remove</button></td>
         `;
 
-        const gradeCell = document.createElement("td");
         const select = document.createElement("select");
         for (let g in gradePoints) {
           const option = document.createElement("option");
@@ -136,3 +157,8 @@ const subjectList = {
     }
 
     renderTable();
+     function resetAll() {
+      subjects = [];
+      renderTable();
+      document.getElementById("result").innerHTML = "";
+    }

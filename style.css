@@ -56,7 +56,7 @@ body {
       position: absolute;
       background: #dad9e3;
       color: black;
-      width: 500px;
+      
       z-index: 1000;
     }
     .suggestions div {
@@ -79,8 +79,69 @@ body {
 
     }
 
+   .custom-inputs {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+}
 
+.custom-inputs input {
+  flex: 1;
+  min-width: 0;
+}
+/* Wrapper to position suggestions properly */
+.input-suggestion-wrapper {
+  position: relative;
+}
 
+/* Suggestion box positioned relative to input */
+.suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #dad9e3;
+  color: black;
+  max-height: 150px;
+  overflow-y: auto;
+  width: 100%;
+  z-index: 1000;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
 
+.suggestions div {
+  padding: 8px;
+  cursor: pointer;
+  border-bottom: 1px solid #ccc;
+}
 
+.suggestions div:last-child {
+  border-bottom: none;
+}
 
+.suggestions div:hover {
+  background: #ddd;
+}
+
+/* ✅ Responsive Design Using Media Query */
+@media (max-width: 600px) {
+  .custom-inputs {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  input {
+    font-size: 16px;
+  }
+
+  table, th, td {
+    font-size: 12px;
+  }
+
+  .suggestions {
+    width: 100%;
+  }
+}
