@@ -1,7 +1,7 @@
 /* 🌸 General Page Styling */
 body {
   font-family: Arial, sans-serif;
-  padding: 20px;
+  padding: 15px;
   background: #dc84e2;
   margin: 0;
 }
@@ -9,6 +9,7 @@ body {
 h2 {
   color: #333;
   text-align: center;
+  font-size: clamp(18px, 2.5vw, 28px); /* responsive text size */
 }
 
 /* 🌸 Main Container */
@@ -18,12 +19,13 @@ h2 {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  max-width: 800px;
+  max-width: 900px;
   margin: auto;
   overflow: hidden;
+  box-sizing: border-box;
 }
 
-/* 🌸 Table Wrapper (Responsive) */
+/* 🌸 Table Wrapper (Responsive Scrollable) */
 .table-wrapper {
   width: 100%;
   overflow-x: auto;
@@ -33,18 +35,20 @@ h2 {
 table {
   width: 100%;
   border-collapse: collapse;
-  min-width: 600px; /* prevents breaking layout */
-  }
+  min-width: 500px; /* keeps table readable */
+}
 
 th, td {
   border: 1px solid #dacfcf;
-  padding: 8px;
+  padding: 10px;
   text-align: center;
+  word-break: break-word;
 }
 
 th {
   background: #101010;
   color: #fff;
+  font-size: clamp(12px, 1.5vw, 16px);
 }
 
 /* 🌸 Inputs & Selects */
@@ -59,6 +63,7 @@ select {
   font-size: 14px;
   background: #fafafa;
   transition: 0.3s ease;
+  box-sizing: border-box;
 }
 
 input:focus,
@@ -75,16 +80,17 @@ button {
   color: #fff;
   border-radius: 5px;
   cursor: pointer;
-  margin: 5px;
+  margin: 5px 0;
   transition: 0.3s ease;
   display: inline-block;
+  font-size: 14px;
 }
 
 button:hover {
   background: #457ba0;
 }
 
-/* Remove Button */
+/* Remove Button 
 .removeBtn {
   background: red;
   padding: 5px 10px;
@@ -94,6 +100,25 @@ button:hover {
 .removeBtn:hover {
   background: rgb(203, 19, 19);
 }
+*/
+/* 🌸 Remove Button */
+.removeBtn {
+  background: #e63946;       /* bright red */
+  color: #fff;
+  padding: 6px 12px;         /* bigger size */
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  display: inline-block;
+  text-align: center;
+  min-width: 70px;           /* ensures visibility */
+}
+
+.removeBtn:hover {
+  background: #b71c1c;       /* darker red on hover */
+}
 
 /* 🌸 Subject Input + Button Wrapper */
 .input-suggestion-wrapper {
@@ -101,14 +126,11 @@ button:hover {
   gap: 10px;
   align-items: center;
   margin: 10px 0;
-  
-
-  position: relative; /* ensures dropdown positions correctly */
+  position: relative; /* for dropdown */
 }
 
 .input-suggestion-wrapper input {
   flex: 2;
-  
 }
 
 .input-suggestion-wrapper button {
@@ -116,28 +138,27 @@ button:hover {
   min-width: 100px;
 }
 
-
- .suggestions {
+/* 🌸 Suggestions Dropdown */
+.suggestions {
   position: absolute;
   top: 100%;
   left: 0;
   background: #f4f2f2;
   color: #050404;
-  max-height: 150px;
+  max-height: 180px;
   overflow-y: auto;
   width: 100%;
   z-index: 1000;
-  border: none; /* default = no border */
+  border: none;
   border-radius: 4px;
 }
 
 .suggestions:not(:empty) {
-  border: 1px solid #3e0202; /* show border only if there are items */
+  border: 1px solid #3e0202;
 }
 
-
 .suggestions div {
-  padding: 8px;
+  padding: 10px;
   cursor: pointer;
   border-bottom: 1px solid #ccc;
 }
@@ -147,7 +168,7 @@ button:hover {
 }
 
 .suggestions div:hover {
-  background:  #74bdea;
+  background: #74bdea;
 }
 
 /* 🌸 Custom Inputs Layout */
@@ -164,6 +185,16 @@ button:hover {
 }
 
 /* 🌸 Responsive Design */
+@media (max-width: 900px) {
+  .container {
+    padding: 15px;
+  }
+
+  th, td {
+    padding: 6px;
+  }
+}
+
 @media (max-width: 600px) {
   .custom-inputs,
   .input-suggestion-wrapper {
@@ -173,6 +204,7 @@ button:hover {
   button {
     width: 100%;
     max-width: none;
+    font-size: 16px;
   }
 
   input,
