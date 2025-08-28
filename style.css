@@ -1,113 +1,140 @@
+/* 🌸 General Page Styling */
 body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-      background: #eeb9f4;
-    }
-    h2 {
-      color: #333;
-      text-align: center;
-    }
-    .container {
-      background: white;
-      color: black;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-      max-width: 800px;
-      margin: auto;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 15px;
-    }
-    th, td {
-      border: 1px solid #dacfcf;
-      padding: 8px;
-      text-align: center;
-    
-    }
-    th {
-      background-color: black;
-      color: white;
-    }
-    input {
-      padding: 6px;
-      margin: 5px 0;
-      width: 100%;
-    }
-    button {
-      padding: 10px 15px;
-      background: #4CAF50;
-      border: none;
-      color: white;
-      border-radius: 5px;
-      cursor: pointer;
-      margin: 5px;
-      
-    }
-    button:hover {
-      background: #45a049;
-    }      
-    .suggestions {
-      border: 0 solid #0b0909;
-      max-height: 120px;
-      overflow-y: auto;
-      position: absolute;
-      background: #dad9e3;
-      color: black;
-      
-      z-index: 1000;
-    }
-    .suggestions div {
-      padding: 8px;
-      cursor: pointer;
-    }
-    .suggestions div:hover {
-      background: #ddd;
-    }
-    .removeBtn {
-      background: red;
-      color: white;
-      border: none;
-      padding: 5px 10px;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    .removeBtn:hover {
-      background: darkred;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background: #dc84e2;
+  margin: 0;
+}
 
-    }
+h2 {
+  color: #333;
+  text-align: center;
+}
 
-   .custom-inputs {
+/* 🌸 Main Container */
+.container {
+  background: #f3f6f7;
+  color: #070707;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  max-width: 800px;
+  margin: auto;
+  overflow: hidden;
+}
+
+/* 🌸 Table Wrapper (Responsive) */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 15px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px; /* prevents breaking layout */
+  }
+
+th, td {
+  border: 1px solid #dacfcf;
+  padding: 8px;
+  text-align: center;
+}
+
+th {
+  background: #101010;
+  color: #fff;
+}
+
+/* 🌸 Inputs & Selects */
+input,
+select {
+  padding: 10px;
+  margin: 5px 0;
+  width: 100%;
+  border: 2px solid #ad1818dc;
+  border-radius: 6px;
+  outline: none;
+  font-size: 14px;
+  background: #fafafa;
+  transition: 0.3s ease;
+}
+
+input:focus,
+select:focus {
+  border-color: #4CAF50;
+  background: #fff;
+}
+
+/* 🌸 Buttons */
+button {
+  padding: 10px 15px;
+  background: #b627b6;
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px;
+  transition: 0.3s ease;
+  display: inline-block;
+}
+
+button:hover {
+  background: #457ba0;
+}
+
+/* Remove Button */
+.removeBtn {
+  background: red;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.removeBtn:hover {
+  background: rgb(203, 19, 19);
+}
+
+/* 🌸 Subject Input + Button Wrapper */
+.input-suggestion-wrapper {
   display: flex;
   gap: 10px;
+  align-items: center;
   margin: 10px 0;
+  
+
+  position: relative; /* ensures dropdown positions correctly */
 }
 
-.custom-inputs input {
+.input-suggestion-wrapper input {
+  flex: 2;
+  
+}
+
+.input-suggestion-wrapper button {
   flex: 1;
-  min-width: 0;
-}
-/* Wrapper to position suggestions properly */
-.input-suggestion-wrapper {
-  position: relative;
+  min-width: 100px;
 }
 
-/* Suggestion box positioned relative to input */
-.suggestions {
+
+ .suggestions {
   position: absolute;
   top: 100%;
   left: 0;
-  background: #dad9e3;
-  color: black;
+  background: #f4f2f2;
+  color: #050404;
   max-height: 150px;
   overflow-y: auto;
   width: 100%;
   z-index: 1000;
-  border: 1px solid #ccc;
+  border: none; /* default = no border */
   border-radius: 4px;
 }
+
+.suggestions:not(:empty) {
+  border: 1px solid #3e0202; /* show border only if there are items */
+}
+
 
 .suggestions div {
   padding: 8px;
@@ -120,24 +147,42 @@ body {
 }
 
 .suggestions div:hover {
-  background: #ddd;
+  background:  #74bdea;
 }
 
-/* ✅ Responsive Design Using Media Query */
+/* 🌸 Custom Inputs Layout */
+.custom-inputs {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.custom-inputs input,
+.custom-inputs select {
+  flex: 1;
+  min-width: 0;
+}
+
+/* 🌸 Responsive Design */
 @media (max-width: 600px) {
-  .custom-inputs {
+  .custom-inputs,
+  .input-suggestion-wrapper {
     flex-direction: column;
   }
 
   button {
     width: 100%;
+    max-width: none;
   }
 
-  input {
+  input,
+  select {
     font-size: 16px;
   }
 
-  table, th, td {
+  table,
+  th,
+  td {
     font-size: 12px;
   }
 
