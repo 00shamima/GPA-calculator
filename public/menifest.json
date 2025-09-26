@@ -11,19 +11,15 @@
   
   "icons": [
     {
-      "src": "/GPA-calculator/public/icon192.png", 
+      "src": "/GPA-calculator/icon192.png", 
       "sizes": "192x192",
       "type": "image/png" 
     },
     {
-      "src": "/GPA-calculator/public/icon512.png", 
+      "src": "/GPA-calculator/icon512.png", 
       "sizes": "512x512",
       "type": "image/png" 
-    },
-    {
-      "src": "/GPA-calculator/public/favicon.ico", 
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
     }
+    
   ]
 }
