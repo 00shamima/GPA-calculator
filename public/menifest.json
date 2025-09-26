@@ -6,12 +6,12 @@
   "display": "standalone",
   "icons": [
     {
-      "src": "/GPA Calculator/logo192.jpge", 
+      "src": "/GPA Calculator/logo192.jpeg", 
       "sizes": "192x192",
       "type": "image/jpge"
     },
     {
-      "src": "/GPA Calculator/.jpge", 
+      "src": "/GPA Calculator/logo512.jpeg", 
       "sizes": "512x512",
       "type": "image/jpge"
     }
