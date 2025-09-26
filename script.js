@@ -2,7 +2,7 @@ const subjectList = {
   "BSc.IT": {
     "Semester I": {
       "Language - I": 4,
-      "English - I": 4,
+    "English - I": 4,
       "Computing Fundamentals & C Programming": 4,
       "Digital Computer Fundamentals": 4,
       "Allied 1: Discrete Mathematics": 5,
@@ -278,20 +278,6 @@ const subjectList = {
   }
 };
 
-     
-
-
-
-
-
-
-
-
-
-
-
-
-  
     // Add Bsc.IT semesters and subjects here if needed
   
 
@@ -477,3 +463,4 @@ function preventInvalidCredit(input) {
 }
 
 renderTable();
+// 
