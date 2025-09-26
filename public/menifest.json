@@ -16,17 +16,15 @@
       "type":"image/x-icon"
     },
     {
-      "src": "/GPA CALCULATOR/logo192.jpeg", 
+      "src": "/GPA CALCULATO/icon192.png", 
       "sizes": "192x192",
       "type": "image/jpeg" 
     },
     {
-      "src": "/GPA CALCULATOR/logo150.jpeg", 
+      "src": "/GPA CALCULATOR/icon512.png", 
       "sizes": "512x512",
       "type": "image/jpeg" 
-    },
-    {
-      "src": "/GPA CALCULATOR/logo150.jpeg", 
-      "sizes": "150x150",
-      "type": "image/jpeg" 
+    }
    
+  ]
+}
