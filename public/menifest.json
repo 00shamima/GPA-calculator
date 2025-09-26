@@ -1,8 +1,13 @@
 {
   "name": "GPA Calculator",
   "short_name": "GPA Calc",
-  "start_url": "./GPA Calculator",
-  "scope": "/public/", 
+  
+ 
+  "start_url": "index.html", 
+  
+  
+  "scope": "./", 
+  
   "display": "standalone",
   "icons": [
     {
@@ -18,12 +23,12 @@
     {
       "src": "/GPA Calculator/logo512.jpeg", 
       "sizes": "512x512",
-      "type": "image/jpeg"  
+      "type": "image/jpeg" 
     },
     {
       "src": "/GPA Calculator/logo150.jpeg", 
       "sizes": "150x150",
-      "type": "image/jpeg"  
+      "type": "image/jpeg" 
     }
   ]
 }
