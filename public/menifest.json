@@ -21,6 +21,11 @@
       "src": "/GPA Calculator/logo512.jpeg", 
       "sizes": "512x512",
       "type": "image/jpge"
+    },
+     {
+      "src": "/GPA Calculator/logo150.jpeg", 
+      "sizes": "150x150",
+      "type": "image/jpge"
     }
     
   ]
