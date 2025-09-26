@@ -2,9 +2,8 @@
   "name": "GPA CALCULATOR",
   "short_name": "GPA Calc",
   
-  "start_url": "./", 
+  "start_url": "/GPA-calculator/", 
   
-  "scope": "/", 
   
   "display": "standalone",
   "theme_color": "#007acc",
@@ -12,7 +11,6 @@
   
   "icons": [
     {
-     
       "src": "/GPA-calculator/public/icon192.png", 
       "sizes": "192x192",
       "type": "image/png" 
