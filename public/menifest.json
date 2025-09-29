@@ -2,7 +2,7 @@
   "name": "GPA CALCULATOR",
   "short_name": "GPA Calc",
   
-  "start_url": "/GPA-calculator/", 
+  "start_url": "/", 
   
   
   "display": "standalone",
@@ -11,12 +11,12 @@
   
   "icons": [
     {
-      "src": "/GPA-calculator/icon192.png", 
+      "src": "../icon192.png", 
       "sizes": "192x192",
       "type": "image/png" 
     },
     {
-      "src": "/GPA-calculator/icon512.png", 
+      "src": "../icon512.png", 
       "sizes": "512x512",
       "type": "image/png" 
     }
